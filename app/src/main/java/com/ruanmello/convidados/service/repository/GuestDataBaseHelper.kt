@@ -5,7 +5,8 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import com.ruanmello.convidados.service.constants.DataBaseConstants
 
-class GuestDataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
+class GuestDataBaseHelper(context: Context) :
+    SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
     override fun onCreate(db: SQLiteDatabase) {
         db.execSQL(CREATE_TABLE_GUEST)
     }
@@ -20,9 +21,9 @@ class GuestDataBaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE
 
         private const val CREATE_TABLE_GUEST = (
                 "create table " + DataBaseConstants.GUEST.TABLE_NAME + " ("
-                + DataBaseConstants.GUEST.COLUMNS.ID + " integer primary key autoincrement, "
-                + DataBaseConstants.GUEST.COLUMNS.NAME + "text, "
-                + DataBaseConstants.GUEST.COLUMNS.PRESENCE + " integer);")
+                        + DataBaseConstants.GUEST.COLUMNS.ID + " integer primary key autoincrement, "
+                        + DataBaseConstants.GUEST.COLUMNS.NAME + "text, "
+                        + DataBaseConstants.GUEST.COLUMNS.PRESENCE + " integer);")
     }
 
 }
