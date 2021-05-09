@@ -29,7 +29,7 @@ class GuestRepository private constructor(context: Context) {
         val list: MutableList<GuestModel> = ArrayList()
         return try {
 
-            val db = mGuestDataBaseHelper.writableDatabase
+            val db = mGuestDataBaseHelper.readableDatabase
 
             val projection = arrayOf(
                 DataBaseConstants.GUEST.COLUMNS.ID,
@@ -67,7 +67,7 @@ class GuestRepository private constructor(context: Context) {
         val list: MutableList<GuestModel> = ArrayList()
         return try {
 
-            val db = mGuestDataBaseHelper.writableDatabase
+            val db = mGuestDataBaseHelper.readableDatabase
 
 
             val cursor = db.rawQuery("SELECT id, name, presence FROM Guest WHERE presence = 1", null)
@@ -97,8 +97,7 @@ class GuestRepository private constructor(context: Context) {
         val list: MutableList<GuestModel> = ArrayList()
         return try {
 
-            val db = mGuestDataBaseHelper.writableDatabase
-
+            val db = mGuestDataBaseHelper.readableDatabase
 
             val cursor = db.rawQuery("SELECT id, name, presence FROM Guest WHERE presence = 0", null)
 
@@ -127,7 +126,7 @@ class GuestRepository private constructor(context: Context) {
         var guest: GuestModel? = null
         return try {
 
-            val db = mGuestDataBaseHelper.writableDatabase
+            val db = mGuestDataBaseHelper.readableDatabase
 
             val projection = arrayOf(
                 DataBaseConstants.GUEST.COLUMNS.NAME,
@@ -139,8 +138,7 @@ class GuestRepository private constructor(context: Context) {
 
             val cursor = db.query(
                 DataBaseConstants.GUEST.TABLE_NAME, projection, selection,
-                args, null, null, null
-            )
+                args, null, null, null )
 
             if (cursor != null && cursor.count > 0){
                 cursor.moveToFirst()
@@ -152,7 +150,6 @@ class GuestRepository private constructor(context: Context) {
             }
 
             cursor?.close()
-
             guest
         } catch (e: Exception) {
             guest
@@ -165,11 +162,10 @@ class GuestRepository private constructor(context: Context) {
 
             val db = mGuestDataBaseHelper.writableDatabase
 
-            val contentValue = ContentValues()
-            contentValue.put(DataBaseConstants.GUEST.COLUMNS.NAME, guest.name)
-            contentValue.put(DataBaseConstants.GUEST.COLUMNS.PRESENCE, guest.presence)
-
-            db.insert(DataBaseConstants.GUEST.TABLE_NAME, null, contentValue)
+            val contentValues = ContentValues()
+            contentValues.put(DataBaseConstants.GUEST.COLUMNS.NAME, guest.name)
+            contentValues.put(DataBaseConstants.GUEST.COLUMNS.PRESENCE, guest.presence)
+            db.insert(DataBaseConstants.GUEST.TABLE_NAME, null, contentValues)
             true
         } catch (e: Exception) {
             false

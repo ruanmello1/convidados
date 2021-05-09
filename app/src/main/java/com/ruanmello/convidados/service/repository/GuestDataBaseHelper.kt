@@ -19,11 +19,11 @@ class GuestDataBaseHelper(context: Context) :
         private const val DATABASE_VERSION = 1
         private const val DATABASE_NAME = "Convidados.db"
 
-        private const val CREATE_TABLE_GUEST = (
-                "create table " + DataBaseConstants.GUEST.TABLE_NAME + " ("
-                        + DataBaseConstants.GUEST.COLUMNS.ID + " integer primary key autoincrement, "
-                        + DataBaseConstants.GUEST.COLUMNS.NAME + "text, "
-                        + DataBaseConstants.GUEST.COLUMNS.PRESENCE + " integer);")
+        private const val CREATE_TABLE_GUEST =
+            ("create table " + DataBaseConstants.GUEST.TABLE_NAME + " ("
+                    + DataBaseConstants.GUEST.COLUMNS.ID + " integer primary key autoincrement, "
+                    + DataBaseConstants.GUEST.COLUMNS.NAME + " text, "
+                    + DataBaseConstants.GUEST.COLUMNS.PRESENCE + " integer);")
     }
 
 }
