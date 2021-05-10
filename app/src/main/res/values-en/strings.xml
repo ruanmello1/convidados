@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Guests</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Guests</string>
+    <string name="nav_header_subtitle">Your party, your guests!</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_all_guests">All guests</string>
+    <string name="menu_presents">Presents</string>
+    <string name="menu_absents">Absents</string>
+
+
+    <string name="menu_todos_convidados">All guests</string>
+    <string name="menu_presentes">Presents</string>
+    <string name="menu_ausentes">Absents</string>
+    <string name="cadastro_convidado">Cadastro de convidados</string>
+    <string name="ausentes">Absents</string>
+    <string name="presentes">Presents</string>
+    <string name="todos_convidados">All guests</string>
+    <string name="salvar">Save</string>
+    <string name="ausente">Absent</string>
+    <string name="presente">Present</string>
+    <string name="nao_confirmado">Not confirmed</string>
+    <string name="confirmacao">Confirmation</string>
+    <string name="nome">Name</string>
+    <string name="cancelar">Cancel</string>
+    <string name="remocao_convidado">Remove guests</string>
+    <string name="deseja_remover">Remove guest from the list?</string>
+    <string name="remover">Remove</string>
+    <string name="removido_com_sucesso">Guest successfully removed.</string>
+    <string name="total">Total</string>
+    <string name="agfnome">Name</string>
+    <string name="adfconfirmação">Confirmation</string>
+    <string name="adfpresent">Present</string>
+    <string name="adfabsent">Absent</string>
+    <string name="adfsave">SAVE</string>
+</resources>
