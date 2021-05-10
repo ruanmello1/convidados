@@ -5,7 +5,6 @@ import android.content.Context
 import com.ruanmello.convidados.service.constants.DataBaseConstants
 import com.ruanmello.convidados.service.model.GuestModel
 import java.lang.Exception
-import java.sql.DatabaseMetaData
 
 //Classes que a responsabilidade é salvar valores do banco de dados
 
@@ -192,12 +191,12 @@ class GuestRepository private constructor(context: Context) {
         }
     }
 
-    fun delete(guest: GuestModel): Boolean {
+    fun delete(id: Int): Boolean {
         return try {
             val db = mGuestDataBaseHelper.writableDatabase
 
             val selection = DataBaseConstants.GUEST.COLUMNS.ID + " = ?"
-            val args = arrayOf(guest.id.toString())
+            val args = arrayOf(id.toString())
 
             db.delete(DataBaseConstants.GUEST.TABLE_NAME, selection, args)
             true
